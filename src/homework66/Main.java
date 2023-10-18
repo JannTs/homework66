@@ -14,7 +14,6 @@ public class Main {
     2. Должна быть возможность на основе классов создавать потоки. Т.е.
     родительский класс  должен реализовывать Runnable
      */
-
     public static void main(String[] args) {
         int creditToIssue = 15;
         AbstractClerk regularClerk = new RegularClerk(
@@ -46,11 +45,11 @@ public class Main {
         long crazyClerkTime = crazyClerk.getFinishTime() - crazyClerk.getStartTime();
 
 
-        System.out.println("Regular Clerk потратил времени на выдачу всех кредитов: " +
+        System.out.println("Regular Clerk потратил времени на выдачу "+creditToIssue+" кредитов: " +
                     regularClerkTime);
         System.out.println("По каждому кредиту "+ regularClerk.getProcessingTimes().toString()
                     + "\nсреднее время, потраченное на клиента "+ regularClerkTime/creditToIssue);
-        System.out.println("Crazy Clerk потратил времени на выдачу всех кредитов: "
+        System.out.println("Crazy Clerk потратил времени на выдачу "+creditToIssue+" кредитов: "
                     + crazyClerkTime );
         System.out.println("По каждому кредиту "+ crazyClerk.getProcessingTimes().toString()
                     + "\nсреднее время, потраченное на клиента "+ crazyClerkTime/creditToIssue);

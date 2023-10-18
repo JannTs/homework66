@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegularClerk extends AbstractClerk{
-    private List<Integer> processingTimes; // List для хранения статистики
+    private final List<Integer> processingTimes; // List для хранения статистики
     public RegularClerk(String name, int minTime, int maxTime, int creditsNum) {
         super(name, minTime, maxTime, creditsNum);
         processingTimes = new ArrayList<>();

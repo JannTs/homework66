@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LazyInspiredClerk extends AbstractClerk{
-    private List<Integer> processingTimes; // List для хранения статистики
+    private final List<Integer> processingTimes; // List для хранения статистики
     private static final int INSPIRATION_PROBABILITY = 20; //  вероятность вдохновения
     private static int INSPIRATION_TIMES = 5; // сколько раз выдает кредиты быстрее
 
@@ -30,7 +30,7 @@ public class LazyInspiredClerk extends AbstractClerk{
             if (random.nextInt(100) < INSPIRATION_PROBABILITY) {
                 // ускоряем выдачу кредитов - imitating working ecstasy
                 timeToProcess = (int) ((minTime + random.nextInt(maxTime - minTime + 1))/ inspirationCoef);
-                INSPIRATION_TIMES--;// уменьшаем количество приходов приступов вдохновления
+                INSPIRATION_TIMES--;// уменьшаем количество приступов вдохновления
             } else {
                 timeToProcess = minTime + random.nextInt(maxTime - minTime + 1);
             }
